@@ -18,8 +18,11 @@ public class DataMobil {
         // TODO code application logic here
 //        Login login = new Login();
 //        login.setVisible(true);
-        FormDataMobil formMobil = new FormDataMobil();
-        formMobil.setVisible(true);
+//        FormDataMobil formMobil = new FormDataMobil();
+//        formMobil.setVisible(true);
+        
+        FAnggota fanggota = new FAnggota();
+        fanggota.setVisible(true);
     }
     
 }
