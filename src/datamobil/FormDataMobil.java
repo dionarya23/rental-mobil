@@ -41,7 +41,7 @@ public class FormDataMobil extends javax.swing.JFrame {
               };
         TMobil.setModel(tabModel);
         TMobil.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        TMobil.getColumnModel().getColumn(0).setPreferredWidth(30);
+        TMobil.getColumnModel().getColumn(0).setPreferredWidth(100);
         TMobil.getColumnModel().getColumn(1).setPreferredWidth(100);
         TMobil.getColumnModel().getColumn(2).setPreferredWidth(100);
         TMobil.getColumnModel().getColumn(3).setPreferredWidth(100);
@@ -195,7 +195,32 @@ public class FormDataMobil extends javax.swing.JFrame {
         }
 
       }
-
+    
+    public void hapusData() {
+        // Konfirmasi sebelum melakukan penghapusan data
+        ambilData_dari_JTable();
+        int ok = JOptionPane.showConfirmDialog(this,
+            "Anda Yakin Ingin Menghapus Data\nDengan Id Mobil = '" + txtIdMobil.getText() +
+            "'", "Konfirmasi Menghapus Data",JOptionPane.YES_NO_OPTION);
+        if (ok == 0) {     // Apabila tombol OK ditekan
+          try {       
+            String sql = "DELETE FROM data_mobil WHERE id_mobil = ?";
+            PreparedStatement st = conn.prepareStatement(sql);
+            st.setString(1, txtIdMobil.getText());
+            int rs=st.executeUpdate();
+            if(rs>0){
+            tampilDataKeJTable();
+            JOptionPane.showMessageDialog(this,"Data Berhasil dihapus");
+            }
+            txtTipeMobil.setText("");
+            txtMerkMobil.setText("");
+            txtHargaSewa.setText("");
+            txtIdMobil.setText("");
+          } catch (Exception se) {  // Silahkan tambahkan catch Exception yang lain
+             JOptionPane.showMessageDialog(this,"Gagal Hapus Data.. ");
+           }
+        }
+      }
 
 
 
@@ -221,8 +246,13 @@ public class FormDataMobil extends javax.swing.JFrame {
         BEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtIdMobil = new javax.swing.JTextField();
+        BHapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TMobil = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        CBCari = new javax.swing.JComboBox();
+        txtCari = new javax.swing.JTextField();
+        BCari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -276,6 +306,13 @@ public class FormDataMobil extends javax.swing.JFrame {
 
         txtIdMobil.setEnabled(false);
 
+        BHapus.setText("Hapus");
+        BHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BHapusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -285,11 +322,12 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BTambahMobil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGap(9, 9, 9)
                         .addComponent(BSimpan)
                         .addGap(18, 18, 18)
                         .addComponent(BEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BHapus)
                         .addGap(18, 18, 18)
                         .addComponent(BCloseMobil))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -304,7 +342,7 @@ public class FormDataMobil extends javax.swing.JFrame {
                             .addComponent(txtMerkMobil)
                             .addComponent(txtHargaSewa)
                             .addComponent(txtIdMobil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,8 +368,9 @@ public class FormDataMobil extends javax.swing.JFrame {
                     .addComponent(BSimpan)
                     .addComponent(BCloseMobil)
                     .addComponent(BTambahMobil)
-                    .addComponent(BEdit))
-                .addContainerGap(309, Short.MAX_VALUE))
+                    .addComponent(BEdit)
+                    .addComponent(BHapus))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         TMobil.setModel(new javax.swing.table.DefaultTableModel(
@@ -347,25 +386,53 @@ public class FormDataMobil extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TMobil);
 
+        jLabel5.setText("Cari Berdasarkan");
+
+        CBCari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Id Mobil", "Tipe Mobil", "Merk Mobil" }));
+
+        BCari.setText("Cari");
+        BCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCariActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BCari)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(220, Short.MAX_VALUE)
+                .addContainerGap(210, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BCari))
+                .addGap(35, 35, 35))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 353, Short.MAX_VALUE)))
         );
 
         pack();
@@ -413,6 +480,54 @@ public class FormDataMobil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTipeMobilActionPerformed
 
+    private void BHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BHapusActionPerformed
+        // TODO add your handling code here:
+        hapusData();
+    }//GEN-LAST:event_BHapusActionPerformed
+
+    private void BCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BCariActionPerformed
+        // TODO add your handling code here:
+        String sql;
+        int pilih = CBCari.getSelectedIndex();
+        String cari = txtCari.getText();
+        try {
+            if(pilih==0)
+                sql ="Select * from data_mobil WHERE id_mobil ='" +txtCari.getText() + "'";
+            else if (pilih==1)
+                sql ="Select * from data_mobil WHERE tipe_mobil Like '%" +txtCari.getText() + "%'";
+            else
+                sql ="Select * from data_mobil WHERE merk_mobil Like '%" +txtCari.getText() + "%'";
+
+            PreparedStatement st = conn.prepareStatement(sql);
+            ResultSet rs =st.executeQuery();
+
+            hapusIsiJTable();
+            String id_mobil, tipe_mobil, merk_mobil, harga_sewa, status_sewa, ketersediaan;
+           
+            while(rs.next()){
+                id_mobil=rs.getString("id_mobil");
+                tipe_mobil=rs.getString("type_mobil");
+                merk_mobil=rs.getString("merk_mobil");
+                harga_sewa=rs.getString("harga_sewa");
+                ketersediaan = rs.getString("status_sewa");
+                status_sewa = "Tersedia";
+                if (ketersediaan == "1") {
+                   status_sewa = "Tidak Tersedia";
+                }
+
+                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_sewa, status_sewa};
+                tabModel.addRow(Data);
+            }
+
+             if(tabModel.getRowCount()>0)         
+               JOptionPane.showMessageDialog(this,"Data Ditemukan ");        
+            else
+                JOptionPane.showMessageDialog(this,"Data Tidak Ditemukan.. ");
+
+          }  // Silahkan tambahkan sendiri informasi eksepsi
+        catch (SQLException se) {} 
+    }//GEN-LAST:event_BCariActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -449,17 +564,22 @@ public class FormDataMobil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BCari;
     private javax.swing.JButton BCloseMobil;
     private javax.swing.JButton BEdit;
+    private javax.swing.JButton BHapus;
     private javax.swing.JButton BSimpan;
     private javax.swing.JButton BTambahMobil;
+    private javax.swing.JComboBox CBCari;
     private javax.swing.JTable TMobil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIdMobil;
     private javax.swing.JTextField txtMerkMobil;
