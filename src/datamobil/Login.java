@@ -21,10 +21,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         conn = koneksi.getConnection();
         loginPanel.setVisible(false);
-
         BtnFile.setEnabled(true); // menu item Login
         mLogout.setEnabled(false);// menu item logout
-                   
         loginPanel.setVisible(true);
         welcomePanel.setVisible(false);
     }
