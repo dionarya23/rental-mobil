@@ -169,7 +169,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Harga Sewa"/>
+            <Property name="text" type="java.lang.String" value="Harga Mobil"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtHargaSewa">

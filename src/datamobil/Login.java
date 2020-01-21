@@ -24,7 +24,6 @@ public class Login extends javax.swing.JFrame {
 
         BtnFile.setEnabled(true); // menu item Login
         mLogout.setEnabled(false);// menu item logout
-        mLogin.setEnabled(false);
                    
         loginPanel.setVisible(true);
         welcomePanel.setVisible(false);
@@ -54,13 +53,10 @@ public class Login extends javax.swing.JFrame {
         BTambahMobil = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         BtnFile = new javax.swing.JMenu();
-        mLogin = new javax.swing.JMenuItem();
         mLogout = new javax.swing.JMenuItem();
         mExit = new javax.swing.JMenuItem();
         menuSewa = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        menuPenyedia = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,7 +132,7 @@ public class Login extends javax.swing.JFrame {
         welcomePanel.setBackground(java.awt.Color.gray);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel7.setText("Sistem Informasi Rental Mobil");
+        jLabel7.setText("Sistem Informasi Penjualan Mobil");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel10.setText("Selamat Datang");
@@ -160,20 +156,20 @@ public class Login extends javax.swing.JFrame {
         welcomePanelLayout.setHorizontalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(welcomePanelLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))))
-            .addGroup(welcomePanelLayout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(BTPenyedia)
                 .addGap(87, 87, 87)
                 .addComponent(BTambahMobil)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, welcomePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         welcomePanelLayout.setVerticalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,15 +186,6 @@ public class Login extends javax.swing.JFrame {
         );
 
         BtnFile.setText("File");
-
-        mLogin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        mLogin.setText("Login");
-        mLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mLoginActionPerformed(evt);
-            }
-        });
-        BtnFile.add(mLogin);
 
         mLogout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.CTRL_MASK));
         mLogout.setText("Logout");
@@ -220,7 +207,7 @@ public class Login extends javax.swing.JFrame {
 
         jMenuBar1.add(BtnFile);
 
-        menuSewa.setText("Sewa Mobil");
+        menuSewa.setText("Jual Mobil");
         menuSewa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuSewaActionPerformed(evt);
@@ -228,7 +215,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Sewa");
+        jMenuItem1.setText("Jual");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -237,18 +224,6 @@ public class Login extends javax.swing.JFrame {
         menuSewa.add(jMenuItem1);
 
         jMenuBar1.add(menuSewa);
-
-        jMenu1.setText("Penyedia");
-
-        menuPenyedia.setText("Tambah Penyedia");
-        menuPenyedia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuPenyediaActionPerformed(evt);
-            }
-        });
-        jMenu1.add(menuPenyedia);
-
-        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -264,7 +239,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(welcomePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,19 +255,13 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mLogoutActionPerformed
-        // TODO add your handling code here:
-        initComponents();
         BtnFile.setEnabled(true); // menu item Login
-        mLogout.setEnabled(false);// menu item logout
-        mLogin.setEnabled(true);
+        mLogout.setEnabled(false); // menu item logout
+        loginPanel.setVisible(true);
+        welcomePanel.setVisible(false);
+        txtPassword.setText("");
+        txtUsername.setText("");
     }//GEN-LAST:event_mLogoutActionPerformed
-
-    private void mLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mLoginActionPerformed
-        // TODO add your handling code here:
-       loginPanel.setVisible(true);
-       BtnFile.setEnabled(false);
-       mLogout.setEnabled(true);
-    }//GEN-LAST:event_mLoginActionPerformed
 
     private void mExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mExitActionPerformed
         // TODO add your handling code here:
@@ -314,11 +283,9 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Login Berhasil");
 
                     loginPanel.setVisible(false);
-                    mLogout.setVisible(true);
+                    mLogout.setEnabled(true);
                     welcomePanel.setVisible(true);
-                    mLogin.setVisible(false);
                     menuSewa.setEnabled(true);
-                    
                 }
                 else
                 JOptionPane.showMessageDialog(this, "Ada Kesalahan pada Username/Password");
@@ -363,13 +330,6 @@ public class Login extends javax.swing.JFrame {
         mobil.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BTambahMobilActionPerformed
-
-    private void menuPenyediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPenyediaActionPerformed
-        // TODO add your handling code here:
-        FAnggota anggota = new FAnggota();
-        anggota.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_menuPenyediaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -417,14 +377,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JMenuItem mExit;
-    private javax.swing.JMenuItem mLogin;
     private javax.swing.JMenuItem mLogout;
-    private javax.swing.JMenuItem menuPenyedia;
     private javax.swing.JMenu menuSewa;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;

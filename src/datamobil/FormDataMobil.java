@@ -31,7 +31,7 @@ public class FormDataMobil extends javax.swing.JFrame {
     }
     
     private void setJTable(){
-        String [] JudulKolom={"Id","Tipe Mobil", "Merk Mobil", "Harga Sewa", "Status Sewa"};
+        String [] JudulKolom={"Id","Tipe Mobil", "Merk Mobil", "Harga Mobil", "Ketersedian"};
         tabModel = new DefaultTableModel(null, JudulKolom){
                   boolean[] canEdit = new boolean [] { false, false, false, false};
                   @Override
@@ -58,20 +58,17 @@ public class FormDataMobil extends javax.swing.JFrame {
              //Kelas Resultset Berfungsi Menyimpan Dataset(Sekumpulan Data) hasil prepareStatement Query
             ResultSet rs=st.executeQuery();   // import java.sql.ResultSet;
             // Menampilkan ke JTable  melalui tabModel
-            String id_mobil, tipe_mobil, merk_mobil, harga_sewa, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
-                harga_sewa=rs.getString("harga_sewa");
+                harga_jual=rs.getString("harga_jual");
                 ketersediaan = rs.getString("status_sewa");
-                status_sewa = "Tersedia";
-                if (ketersediaan == "1") {
-                   status_sewa = "Tidak Tersedia";
-                }
+                status_sewa = rs.getString("status_sewa");
 
-                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_sewa, status_sewa};
+                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_jual, status_sewa};
                 tabModel.addRow(Data);
             }
         }
@@ -146,20 +143,20 @@ public class FormDataMobil extends javax.swing.JFrame {
              //Kelas Resultset Berfungsi Menyimpan Dataset(Sekumpulan Data) hasil prepareStatement Query
             ResultSet rs=st.executeQuery();   // import java.sql.ResultSet;
             // Menampilkan ke JTable  melalui tabModel
-            String id_mobil, tipe_mobil, merk_mobil, harga_sewa, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
-                harga_sewa=rs.getString("harga_sewa");
+                harga_jual=rs.getString("harga_jual");
                 ketersediaan = rs.getString("status_sewa");
                 status_sewa = "Tersedia";
                 if (ketersediaan == "1") {
                    status_sewa = "Tidak Tersedia";
                 }
 
-                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_sewa, status_sewa};
+                Object Data[]={id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa};
                 tabModel.addRow(Data);
             }
       }
@@ -173,7 +170,7 @@ public class FormDataMobil extends javax.swing.JFrame {
         // Apabila tombol Yes ditekan
         if (ok == 0) {
           try {
-            String sql ="UPDATE data_mobil SET type_mobil = ?, merk_mobil= ?, harga_sewa = ? WHERE id_mobil = ?";
+            String sql ="UPDATE data_mobil SET type_mobil = ?, merk_mobil= ?, harga_jual = ? WHERE id_mobil = ?";
             PreparedStatement st = conn.prepareStatement(sql);
 
               st.setString(1, txtTipeMobil.getText());
@@ -269,7 +266,7 @@ public class FormDataMobil extends javax.swing.JFrame {
 
         txtMerkMobil.setEnabled(false);
 
-        jLabel3.setText("Harga Sewa");
+        jLabel3.setText("Harga Mobil");
 
         txtHargaSewa.setEnabled(false);
 
@@ -502,20 +499,20 @@ public class FormDataMobil extends javax.swing.JFrame {
             ResultSet rs =st.executeQuery();
 
             hapusIsiJTable();
-            String id_mobil, tipe_mobil, merk_mobil, harga_sewa, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
-                harga_sewa=rs.getString("harga_sewa");
+                harga_jual=rs.getString("harga_jual");
                 ketersediaan = rs.getString("status_sewa");
                 status_sewa = "Tersedia";
                 if (ketersediaan == "1") {
                    status_sewa = "Tidak Tersedia";
                 }
 
-                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_sewa, status_sewa};
+                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_jual, status_sewa};
                 tabModel.addRow(Data);
             }
 
