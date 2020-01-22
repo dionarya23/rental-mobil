@@ -16,15 +16,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-<<<<<<< HEAD
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
-=======
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
 
 /**
  *
@@ -140,12 +131,7 @@ public class FSewa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-=======
         jPanel1 = new javax.swing.JPanel();
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         jLabel1 = new javax.swing.JLabel();
         txtPenyewa = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -153,32 +139,13 @@ public class FSewa extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txt_tanggalMulai = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-<<<<<<< HEAD
-        comboMobil = new javax.swing.JComboBox<>();
-=======
         comboMobil = new javax.swing.JComboBox<String>();
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BTambah = new javax.swing.JButton();
         BClose = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TSewa = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         BtnLaporan = new javax.swing.JButton();
-<<<<<<< HEAD
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-=======
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -191,7 +158,6 @@ public class FSewa extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,19 +165,12 @@ public class FSewa extends javax.swing.JFrame {
 
         jLabel2.setText("No Ktp : ");
 
-<<<<<<< HEAD
-        jLabel3.setText("Tanggal Pembeliani :");
-
-        jLabel4.setText("Mobil Yang Disewa :");
-
-=======
         jLabel3.setText("Tanggal Pembelian :");
 
         jLabel4.setText("Mobil Yang Disewa :");
 
         BTambah.setBackground(new java.awt.Color(51, 153, 255));
         BTambah.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BTambah.setText("Tambah");
         BTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,10 +178,7 @@ public class FSewa extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         BClose.setBackground(new java.awt.Color(204, 204, 204));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BClose.setText("Close");
         BClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,15 +199,10 @@ public class FSewa extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TSewa);
 
-<<<<<<< HEAD
-        jLabel6.setText("tahun-bulan-tanggal");
-
-=======
         jLabel6.setText("*tahun-bulan-tanggal");
 
         BtnLaporan.setBackground(new java.awt.Color(255, 153, 51));
         BtnLaporan.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BtnLaporan.setText("Cetak Laporan");
         BtnLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,55 +210,6 @@ public class FSewa extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(BTambah)
-                        .addGap(26, 26, 26)
-                        .addComponent(BClose, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(BtnLaporan)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtPenyewa)
-                                    .addComponent(txtKtp)
-                                    .addComponent(txt_tanggalMulai)
-                                    .addComponent(comboMobil, 0, 179, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)))))
-                .addGap(34, 34, 34))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtPenyewa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtKtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-=======
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -355,24 +257,10 @@ public class FSewa extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
                     .addComponent(txt_tanggalMulai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-<<<<<<< HEAD
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BClose)
-                    .addComponent(BTambah)
-                    .addComponent(BtnLaporan))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4))
-=======
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
@@ -532,7 +420,6 @@ public class FSewa extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(137, Short.MAX_VALUE))
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
 
         pack();
@@ -553,25 +440,6 @@ public class FSewa extends javax.swing.JFrame {
         // TODO add your handling code here:
         buat_laporan();
     }//GEN-LAST:event_BtnLaporanActionPerformed
-<<<<<<< HEAD
-    
-    private void buat_laporan() {
-        String reportSource;
-        String reportDest;
-            try{
-                       reportSource=System.getProperty("user.dir")+"/report1.jrxml";
-                       reportDest=System.getProperty("user.dir")+"/report1.html";
-
-                       JasperReport jasperReport=JasperCompileManager.compileReport(reportSource);
-                       JasperPrint jasperPrint=JasperFillManager.fillReport(jasperReport,null,conn);
-                       JasperExportManager.exportReportToHtmlFile(jasperPrint,reportDest);
-                       JasperViewer.viewReport(jasperPrint,false);
-
-            }catch(Exception e){
-                   System.out.println(e);
-            }
-    }                           
-=======
 
     private void MenuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHomeMouseClicked
         // TODO add your handling code here:
@@ -651,7 +519,6 @@ public class FSewa extends javax.swing.JFrame {
     private void buat_laporan() {
         System.out.println("Buat Laporan!!!");
     }
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     
     private void tambah() {
          try{            
@@ -739,14 +606,11 @@ public class FSewa extends javax.swing.JFrame {
     private javax.swing.JButton BClose;
     private javax.swing.JButton BTambah;
     private javax.swing.JButton BtnLaporan;
-<<<<<<< HEAD
-=======
     private javax.swing.JLabel MenuDataMobil;
     private javax.swing.JLabel MenuHome;
     private javax.swing.JLabel MenuLogout;
     private javax.swing.JLabel MenuTransaksi;
     private javax.swing.JLabel MenuUser;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTable TSewa;
     private javax.swing.JComboBox<String> comboMobil;
     private javax.swing.JLabel jLabel1;
@@ -754,11 +618,6 @@ public class FSewa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-<<<<<<< HEAD
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-=======
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -768,7 +627,6 @@ public class FSewa extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTextField txtKtp;
     private javax.swing.JTextField txtPenyewa;
     private javax.swing.JTextField txt_tanggalMulai;

@@ -239,22 +239,12 @@ public class FormDataMobil extends javax.swing.JFrame {
         txtHargaSewa = new javax.swing.JTextField();
         BSimpan = new javax.swing.JButton();
         BCloseMobil = new javax.swing.JButton();
-<<<<<<< HEAD
-        BTambahMobil = new javax.swing.JButton();
-=======
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtIdMobil = new javax.swing.JTextField();
         BHapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TMobil = new javax.swing.JTable();
-<<<<<<< HEAD
-        jLabel5 = new javax.swing.JLabel();
-        CBCari = new javax.swing.JComboBox();
-        txtCari = new javax.swing.JTextField();
-        BCari = new javax.swing.JButton();
-=======
         CBCari = new javax.swing.JComboBox();
         txtCari = new javax.swing.JTextField();
         BCari = new javax.swing.JButton();
@@ -272,7 +262,6 @@ public class FormDataMobil extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -301,10 +290,7 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         BCloseMobil.setBackground(new java.awt.Color(204, 204, 204));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BCloseMobil.setText("Close");
         BCloseMobil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,18 +298,8 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        BTambahMobil.setText("Tambah");
-        BTambahMobil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTambahMobilActionPerformed(evt);
-            }
-        });
-
-=======
         BEdit.setBackground(new java.awt.Color(255, 153, 51));
         BEdit.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BEdit.setText("Edit");
         BEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,11 +311,8 @@ public class FormDataMobil extends javax.swing.JFrame {
 
         txtIdMobil.setEnabled(false);
 
-<<<<<<< HEAD
-=======
         BHapus.setBackground(new java.awt.Color(204, 0, 51));
         BHapus.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BHapus.setText("Hapus");
         BHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,8 +320,6 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         TMobil.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -382,39 +353,11 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BTambahMobil)
-                        .addGap(9, 9, 9)
-                        .addComponent(BSimpan)
-                        .addGap(18, 18, 18)
-                        .addComponent(BEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BHapus)
-                        .addGap(18, 18, 18)
-                        .addComponent(BCloseMobil))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTipeMobil)
-                            .addComponent(txtMerkMobil)
-                            .addComponent(txtHargaSewa)
-                            .addComponent(txtIdMobil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))))
-                .addContainerGap(124, Short.MAX_VALUE))
-=======
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,16 +392,11 @@ public class FormDataMobil extends javax.swing.JFrame {
                                 .addComponent(txtHargaSewa)
                                 .addComponent(txtIdMobil, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(230, Short.MAX_VALUE))
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(32, 32, 32)
-=======
                 .addContainerGap(22, Short.MAX_VALUE)
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtIdMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -478,38 +416,6 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BSimpan)
                     .addComponent(BCloseMobil)
-<<<<<<< HEAD
-                    .addComponent(BTambahMobil)
-                    .addComponent(BEdit)
-                    .addComponent(BHapus))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        TMobil.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(TMobil);
-
-        jLabel5.setText("Cari Berdasarkan");
-
-        CBCari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Id Mobil", "Tipe Mobil", "Merk Mobil" }));
-
-        BCari.setText("Cari");
-        BCari.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BCariActionPerformed(evt);
-            }
-        });
-
-=======
                     .addComponent(BEdit)
                     .addComponent(BHapus)
                     .addComponent(BTambahMobil))
@@ -634,45 +540,10 @@ public class FormDataMobil extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(0, 102, 153));
         jSeparator3.setForeground(new java.awt.Color(0, 102, 153));
 
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BCari)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(210, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BCari))
-                .addGap(35, 35, 35))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 353, Short.MAX_VALUE)))
-=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -699,7 +570,6 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
 
         pack();
@@ -795,8 +665,6 @@ public class FormDataMobil extends javax.swing.JFrame {
         catch (SQLException se) {} 
     }//GEN-LAST:event_BCariActionPerformed
 
-<<<<<<< HEAD
-=======
     private void MenuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHomeMouseClicked
         // TODO add your handling code here:
         WelcomePage welcomePage = new WelcomePage();
@@ -872,7 +740,6 @@ public class FormDataMobil extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_MenuLogoutMouseClicked
 
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     /**
      * @param args the command line arguments
      */
@@ -916,24 +783,17 @@ public class FormDataMobil extends javax.swing.JFrame {
     private javax.swing.JButton BSimpan;
     private javax.swing.JButton BTambahMobil;
     private javax.swing.JComboBox CBCari;
-<<<<<<< HEAD
-=======
     private javax.swing.JLabel MenuDataMobil;
     private javax.swing.JLabel MenuHome;
     private javax.swing.JLabel MenuLogout;
     private javax.swing.JLabel MenuTransaksi;
     private javax.swing.JLabel MenuUser;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTable TMobil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-<<<<<<< HEAD
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-=======
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -943,7 +803,6 @@ public class FormDataMobil extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIdMobil;

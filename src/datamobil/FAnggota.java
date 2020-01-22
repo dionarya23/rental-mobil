@@ -232,8 +232,6 @@ public class FAnggota extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-=======
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -244,7 +242,6 @@ public class FAnggota extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         MenuLogout = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -260,11 +257,6 @@ public class FAnggota extends javax.swing.JFrame {
         BTambah = new javax.swing.JButton();
         BEdit = new javax.swing.JButton();
         BHapus = new javax.swing.JButton();
-<<<<<<< HEAD
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-=======
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -372,7 +364,6 @@ public class FAnggota extends javax.swing.JFrame {
                 .addContainerGap(539, Short.MAX_VALUE))
         );
 
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         jLabel2.setText("Username");
 
         jLabel3.setText("Password");
@@ -393,10 +384,7 @@ public class FAnggota extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         bClose.setBackground(new java.awt.Color(204, 204, 204));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         bClose.setText("Close");
         bClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -417,19 +405,12 @@ public class FAnggota extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TAnggota);
 
-<<<<<<< HEAD
-        jLabel1.setText("Id Penyedia");
-
-        txtIdPenyedia.setEnabled(false);
-
-=======
         jLabel1.setText("Id User");
 
         txtIdPenyedia.setEnabled(false);
 
         BTambah.setBackground(new java.awt.Color(51, 153, 255));
         BTambah.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BTambah.setText("Tambah");
         BTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -437,11 +418,8 @@ public class FAnggota extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         BEdit.setBackground(new java.awt.Color(255, 153, 51));
         BEdit.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BEdit.setText("Edit");
         BEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,11 +427,8 @@ public class FAnggota extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         BHapus.setBackground(new java.awt.Color(204, 0, 51));
         BHapus.setForeground(new java.awt.Color(255, 255, 255));
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BHapus.setText("Hapus");
         BHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -461,16 +436,6 @@ public class FAnggota extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-=======
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -479,7 +444,6 @@ public class FAnggota extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
                         .addComponent(BTambah)
                         .addGap(14, 14, 14)
                         .addComponent(BSimpan)
@@ -489,46 +453,6 @@ public class FAnggota extends javax.swing.JFrame {
                         .addComponent(BHapus)
                         .addGap(18, 18, 18)
                         .addComponent(bClose))
-<<<<<<< HEAD
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUsername)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(txtIdPenyedia)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNamaLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtIdPenyedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtNamaLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-=======
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -565,17 +489,12 @@ public class FAnggota extends javax.swing.JFrame {
                     .addComponent(txtNamaLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
                     .addComponent(BSimpan)
                     .addComponent(bClose)
                     .addComponent(BTambah)
                     .addComponent(BEdit)
                     .addComponent(BHapus))
                 .addGap(18, 18, 18)
-<<<<<<< HEAD
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                .addContainerGap())
-=======
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                 .addGap(95, 95, 95))
         );
@@ -624,7 +543,6 @@ public class FAnggota extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
 
         pack();
@@ -672,8 +590,6 @@ public class FAnggota extends javax.swing.JFrame {
         hapusData();
     }//GEN-LAST:event_BHapusActionPerformed
 
-<<<<<<< HEAD
-=======
     private void MenuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHomeMouseClicked
         // TODO add your handling code here:
         WelcomePage welcomePage = new WelcomePage();
@@ -749,7 +665,6 @@ public class FAnggota extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_MenuLogoutMouseClicked
 
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     /**
      * @param args the command line arguments
      */
@@ -790,23 +705,17 @@ public class FAnggota extends javax.swing.JFrame {
     private javax.swing.JButton BHapus;
     private javax.swing.JButton BSimpan;
     private javax.swing.JButton BTambah;
-<<<<<<< HEAD
-=======
     private javax.swing.JLabel MenuDataMobil;
     private javax.swing.JLabel MenuHome;
     private javax.swing.JLabel MenuLogout;
     private javax.swing.JLabel MenuTransaksi;
     private javax.swing.JLabel MenuUser;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTable TAnggota;
     private javax.swing.JButton bClose;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-<<<<<<< HEAD
-    private javax.swing.JScrollPane jScrollPane1;
-=======
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -816,7 +725,6 @@ public class FAnggota extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
->>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTextField txtIdPenyedia;
     private javax.swing.JTextField txtNamaLengkap;
     private javax.swing.JPasswordField txtPassword;
