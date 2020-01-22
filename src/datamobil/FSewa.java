@@ -16,6 +16,12 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -517,7 +523,20 @@ public class FSewa extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuLogoutMouseClicked
     
     private void buat_laporan() {
-        System.out.println("Buat Laporan!!!");
+         String reportSource;
+        String reportDest;
+            try{
+                       reportSource=System.getProperty("user.dir")+"/report1.jrxml";
+                       reportDest=System.getProperty("user.dir")+"/report1.html";
+
+                       JasperReport jasperReport=JasperCompileManager.compileReport(reportSource);
+                       JasperPrint jasperPrint=JasperFillManager.fillReport(jasperReport,null,conn);
+                       JasperExportManager.exportReportToHtmlFile(jasperPrint,reportDest);
+                       JasperViewer.viewReport(jasperPrint,false);
+
+            }catch(Exception e){
+                   System.out.println(e);
+            }
     }
     
     private void tambah() {
