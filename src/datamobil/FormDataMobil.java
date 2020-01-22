@@ -239,17 +239,40 @@ public class FormDataMobil extends javax.swing.JFrame {
         txtHargaSewa = new javax.swing.JTextField();
         BSimpan = new javax.swing.JButton();
         BCloseMobil = new javax.swing.JButton();
+<<<<<<< HEAD
         BTambahMobil = new javax.swing.JButton();
+=======
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtIdMobil = new javax.swing.JTextField();
         BHapus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TMobil = new javax.swing.JTable();
+<<<<<<< HEAD
         jLabel5 = new javax.swing.JLabel();
         CBCari = new javax.swing.JComboBox();
         txtCari = new javax.swing.JTextField();
         BCari = new javax.swing.JButton();
+=======
+        CBCari = new javax.swing.JComboBox();
+        txtCari = new javax.swing.JTextField();
+        BCari = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        BTambahMobil = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        MenuHome = new javax.swing.JLabel();
+        MenuDataMobil = new javax.swing.JLabel();
+        MenuTransaksi = new javax.swing.JLabel();
+        MenuUser = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        MenuLogout = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,6 +301,10 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        BCloseMobil.setBackground(new java.awt.Color(204, 204, 204));
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BCloseMobil.setText("Close");
         BCloseMobil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,6 +312,7 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         BTambahMobil.setText("Tambah");
         BTambahMobil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,6 +320,10 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+=======
+        BEdit.setBackground(new java.awt.Color(255, 153, 51));
+        BEdit.setForeground(new java.awt.Color(255, 255, 255));
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BEdit.setText("Edit");
         BEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,6 +335,11 @@ public class FormDataMobil extends javax.swing.JFrame {
 
         txtIdMobil.setEnabled(false);
 
+<<<<<<< HEAD
+=======
+        BHapus.setBackground(new java.awt.Color(204, 0, 51));
+        BHapus.setForeground(new java.awt.Color(255, 255, 255));
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         BHapus.setText("Hapus");
         BHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,11 +347,48 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        TMobil.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TMobil);
+
+        CBCari.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Id Mobil", "Tipe Mobil", "Merk Mobil" }));
+
+        BCari.setText("Cari");
+        BCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BCariActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Cari Berdasarkan");
+
+        BTambahMobil.setBackground(new java.awt.Color(51, 153, 255));
+        BTambahMobil.setForeground(new java.awt.Color(255, 255, 255));
+        BTambahMobil.setText("Tambah");
+        BTambahMobil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTambahMobilActionPerformed(evt);
+            }
+        });
+
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -340,11 +414,51 @@ public class FormDataMobil extends javax.swing.JFrame {
                             .addComponent(txtHargaSewa)
                             .addComponent(txtIdMobil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE))))
                 .addContainerGap(124, Short.MAX_VALUE))
+=======
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(BTambahMobil)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(BSimpan)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(BEdit)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(BHapus)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(BCloseMobil))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(28, 28, 28)
+                            .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(BCari))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4))
+                            .addGap(21, 21, 21)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtTipeMobil)
+                                .addComponent(txtMerkMobil)
+                                .addComponent(txtHargaSewa)
+                                .addComponent(txtIdMobil, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(230, Short.MAX_VALUE))
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(32, 32, 32)
+=======
+                .addContainerGap(22, Short.MAX_VALUE)
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtIdMobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -364,6 +478,7 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BSimpan)
                     .addComponent(BCloseMobil)
+<<<<<<< HEAD
                     .addComponent(BTambahMobil)
                     .addComponent(BEdit)
                     .addComponent(BHapus))
@@ -394,10 +509,137 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+=======
+                    .addComponent(BEdit)
+                    .addComponent(BHapus)
+                    .addComponent(BTambahMobil))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BCari)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(185, 185, 185))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel2.setToolTipText("");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Dashboard");
+
+        jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
+
+        MenuHome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        MenuHome.setForeground(new java.awt.Color(204, 204, 204));
+        MenuHome.setText("Home");
+        MenuHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuHomeMouseClicked(evt);
+            }
+        });
+
+        MenuDataMobil.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        MenuDataMobil.setForeground(new java.awt.Color(255, 255, 255));
+        MenuDataMobil.setText("Data Mobil");
+        MenuDataMobil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuDataMobilMouseClicked(evt);
+            }
+        });
+
+        MenuTransaksi.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        MenuTransaksi.setForeground(new java.awt.Color(204, 204, 204));
+        MenuTransaksi.setText("Transaksi");
+        MenuTransaksi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTransaksiMouseClicked(evt);
+            }
+        });
+
+        MenuUser.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        MenuUser.setForeground(new java.awt.Color(204, 204, 204));
+        MenuUser.setText("User");
+        MenuUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuUserMouseClicked(evt);
+            }
+        });
+
+        jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
+
+        MenuLogout.setBackground(new java.awt.Color(204, 204, 204));
+        MenuLogout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        MenuLogout.setForeground(new java.awt.Color(204, 204, 204));
+        MenuLogout.setText("Logout");
+        MenuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuLogoutMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MenuHome)
+                            .addComponent(MenuDataMobil)
+                            .addComponent(MenuTransaksi)
+                            .addComponent(MenuUser)
+                            .addComponent(MenuLogout))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MenuHome)
+                .addGap(18, 18, 18)
+                .addComponent(MenuDataMobil)
+                .addGap(18, 18, 18)
+                .addComponent(MenuTransaksi)
+                .addGap(18, 18, 18)
+                .addComponent(MenuUser)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(MenuLogout)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Sitem Informasi Penjualan Mobil");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setText("Data Mobil");
+
+        jSeparator3.setBackground(new java.awt.Color(0, 102, 153));
+        jSeparator3.setForeground(new java.awt.Color(0, 102, 153));
+
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,6 +672,34 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 353, Short.MAX_VALUE)))
+=======
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
         );
 
         pack();
@@ -525,6 +795,84 @@ public class FormDataMobil extends javax.swing.JFrame {
         catch (SQLException se) {} 
     }//GEN-LAST:event_BCariActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void MenuHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHomeMouseClicked
+        // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+        FormDataMobil formDataMobil = new FormDataMobil();
+        FAnggota formAnggota = new FAnggota();
+        FSewa formSewa = new FSewa();
+        Login login = new Login();
+
+        this.setVisible(false);
+        welcomePage.setVisible(true);
+        formAnggota.setVisible(false);
+        formSewa.setVisible(false);
+        login.setVisible(false);
+    }//GEN-LAST:event_MenuHomeMouseClicked
+
+    private void MenuDataMobilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuDataMobilMouseClicked
+        // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+        FormDataMobil formDataMobil = new FormDataMobil();
+        FAnggota formAnggota = new FAnggota();
+        FSewa formSewa = new FSewa();
+        Login login = new Login();
+
+        this.setVisible(true);
+        welcomePage.setVisible(false);
+        formAnggota.setVisible(false);
+        formSewa.setVisible(false);
+        login.setVisible(false);
+    }//GEN-LAST:event_MenuDataMobilMouseClicked
+
+    private void MenuTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuTransaksiMouseClicked
+        // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+        FormDataMobil formDataMobil = new FormDataMobil();
+        FAnggota formAnggota = new FAnggota();
+        FSewa formSewa = new FSewa();
+        Login login = new Login();
+
+        this.setVisible(false);
+        welcomePage.setVisible(false);
+        formAnggota.setVisible(false);
+        formSewa.setVisible(true);
+        login.setVisible(false);
+    }//GEN-LAST:event_MenuTransaksiMouseClicked
+
+    private void MenuUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUserMouseClicked
+        // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+        FormDataMobil formDataMobil = new FormDataMobil();
+        FAnggota formAnggota = new FAnggota();
+        FSewa formSewa = new FSewa();
+        Login login = new Login();
+
+        this.setVisible(false);
+        welcomePage.setVisible(false);
+        formAnggota.setVisible(true);
+        formSewa.setVisible(false);
+        login.setVisible(false);
+    }//GEN-LAST:event_MenuUserMouseClicked
+
+    private void MenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuLogoutMouseClicked
+        // TODO add your handling code here:
+        WelcomePage welcomePage = new WelcomePage();
+        FormDataMobil formDataMobil = new FormDataMobil();
+        FAnggota formAnggota = new FAnggota();
+        FSewa formSewa = new FSewa();
+        Login login = new Login();
+
+        this.setVisible(false);
+        welcomePage.setVisible(false);
+        formAnggota.setVisible(false);
+        formSewa.setVisible(false);
+        login.setVisible(true);
+    }//GEN-LAST:event_MenuLogoutMouseClicked
+
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     /**
      * @param args the command line arguments
      */
@@ -568,14 +916,34 @@ public class FormDataMobil extends javax.swing.JFrame {
     private javax.swing.JButton BSimpan;
     private javax.swing.JButton BTambahMobil;
     private javax.swing.JComboBox CBCari;
+<<<<<<< HEAD
+=======
+    private javax.swing.JLabel MenuDataMobil;
+    private javax.swing.JLabel MenuHome;
+    private javax.swing.JLabel MenuLogout;
+    private javax.swing.JLabel MenuTransaksi;
+    private javax.swing.JLabel MenuUser;
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTable TMobil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+=======
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+>>>>>>> c7bbe8eaaa239df640a2bb3543c52fd88c466097
     private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIdMobil;
