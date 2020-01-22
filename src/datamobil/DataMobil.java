@@ -12,11 +12,8 @@ package datamobil;
 public class DataMobil {
 
     public static void main(String[] args) {
-//        Login login = new Login();
-//        login.setVisible(true);
-        
-        WelcomePage welcomePage = new WelcomePage();
-        welcomePage.setVisible(true);
+        Login login = new Login();
+        login.setVisible(true);
     }
     
 }
