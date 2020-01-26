@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2019 at 10:14 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Jan 26, 2020 at 03:45 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,16 +32,18 @@ CREATE TABLE `data_mobil` (
   `id_mobil` int(11) NOT NULL,
   `type_mobil` varchar(255) NOT NULL,
   `merk_mobil` varchar(255) NOT NULL,
-  `harga_sewa` varchar(255) NOT NULL,
-  `status_sewa` varchar(255) NOT NULL
+  `harga_jual` varchar(255) NOT NULL,
+  `stok` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_mobil`
 --
 
-INSERT INTO `data_mobil` (`id_mobil`, `type_mobil`, `merk_mobil`, `harga_sewa`, `status_sewa`) VALUES
-(1, 'Toyota', 'Avanza', '100000', 'Tidak Tersedia');
+INSERT INTO `data_mobil` (`id_mobil`, `type_mobil`, `merk_mobil`, `harga_jual`, `stok`) VALUES
+(1, 'Toyota', 'Avanza', '100000', 0),
+(2, 'Angola', 'Avanza', '120000', 0),
+(4, 'Avanza', 'Jaguar', '10000', 10);
 
 -- --------------------------------------------------------
 
@@ -66,25 +68,26 @@ INSERT INTO `penyedia` (`id_penyedia`, `username`, `password`, `nama_lengkap`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sewa`
+-- Table structure for table `transaksi`
 --
 
-CREATE TABLE `sewa` (
-  `id_sewa` int(11) NOT NULL,
-  `nama_penyewa` varchar(255) NOT NULL,
+CREATE TABLE `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `nama_pembeli` varchar(255) NOT NULL,
   `no_ktp` varchar(255) NOT NULL,
-  `tgl_mulai` varchar(255) NOT NULL,
-  `tgl_berakhir` varchar(255) NOT NULL,
-  `id_mobil` int(11) NOT NULL,
-  `harga_total` varchar(255) NOT NULL
+  `tgl_pembelian` varchar(255) NOT NULL,
+  `id_mobil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sewa`
+-- Dumping data for table `transaksi`
 --
 
-INSERT INTO `sewa` (`id_sewa`, `nama_penyewa`, `no_ktp`, `tgl_mulai`, `tgl_berakhir`, `id_mobil`, `harga_total`) VALUES
-(2, 'Dion', '20139021', '2019-10-12', '2019-10-13', 1, '100000');
+INSERT INTO `transaksi` (`id_transaksi`, `nama_pembeli`, `no_ktp`, `tgl_pembelian`, `id_mobil`) VALUES
+(2, 'Dion', '20139021', '2019-10-12', 1),
+(3, 'Arya', '8123912', '2019-10-11', 2),
+(4, 'Pamungkas', '302930', '2020-01-10', 4),
+(5, 'Naufal', '302930', '2020-01-10', 4);
 
 --
 -- Indexes for dumped tables
@@ -103,10 +106,10 @@ ALTER TABLE `penyedia`
   ADD PRIMARY KEY (`id_penyedia`);
 
 --
--- Indexes for table `sewa`
+-- Indexes for table `transaksi`
 --
-ALTER TABLE `sewa`
-  ADD PRIMARY KEY (`id_sewa`),
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id_transaksi`),
   ADD KEY `id_mobil` (`id_mobil`);
 
 --
@@ -117,7 +120,7 @@ ALTER TABLE `sewa`
 -- AUTO_INCREMENT for table `data_mobil`
 --
 ALTER TABLE `data_mobil`
-  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `penyedia`
@@ -126,20 +129,20 @@ ALTER TABLE `penyedia`
   MODIFY `id_penyedia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sewa`
+-- AUTO_INCREMENT for table `transaksi`
 --
-ALTER TABLE `sewa`
-  MODIFY `id_sewa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `sewa`
+-- Constraints for table `transaksi`
 --
-ALTER TABLE `sewa`
-  ADD CONSTRAINT `sewa_ibfk_1` FOREIGN KEY (`id_mobil`) REFERENCES `data_mobil` (`id_mobil`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_mobil`) REFERENCES `data_mobil` (`id_mobil`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
