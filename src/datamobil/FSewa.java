@@ -108,7 +108,7 @@ public class FSewa extends javax.swing.JFrame {
     {
        try{   
               // Membuat perintah sql 
-            String sql="Select * from data_mobil where status_sewa='Tersedia'";
+            String sql="Select * from data_mobil where stok > 0";
             PreparedStatement st=conn.prepareStatement(sql);  // import java.sql.PreparedStatement
               //Membuat Variabel Bertipe ResulSet
              //Kelas Resultset Berfungsi Menyimpan Dataset(Sekumpulan Data) hasil prepareStatement Query
@@ -546,14 +546,17 @@ public class FSewa extends javax.swing.JFrame {
         String querySql = "Select * from data_mobil where id_mobil="+arrOfStr[0];
         PreparedStatement skuy = conn.prepareStatement(querySql);
         ResultSet result=skuy.executeQuery();
-        int id = 0;
+        int id = 0, stok = 0;
              while(result.next()) {
-                id = result.getInt("id_mobil");
-             }             
-         String sql ="UPDATE data_mobil SET status_sewa=? where id_mobil=?";
+                id   = result.getInt("id_mobil");
+                stok = result.getInt("stok");
+             }
+
+             if (stok != 0) {
+         String sql ="UPDATE data_mobil SET stok=? where id_mobil=?";
          PreparedStatement santuy = conn.prepareStatement(sql);
         
-          santuy.setString(1, "Tidak Tersedia");
+          santuy.setInt(1, stok-1);
           santuy.setInt(2, Integer.parseInt(arrOfStr[0]));
 
           int rs=santuy.executeUpdate();
@@ -576,6 +579,9 @@ public class FSewa extends javax.swing.JFrame {
                 setJTable();
             }
 
+        } else {
+              JOptionPane.showMessageDialog(this, "Maaf Stok Sudah Habis");
+          } 
         }
          
         catch (SQLException sqle) {

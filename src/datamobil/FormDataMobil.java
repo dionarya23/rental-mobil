@@ -28,10 +28,11 @@ public class FormDataMobil extends javax.swing.JFrame {
         initComponents();
         conn=datamobil.koneksi.getConnection();
         setJTable();
+        txtStok.setEnabled(false);
     }
     
     private void setJTable(){
-        String [] JudulKolom={"Id","Tipe Mobil", "Merk Mobil", "Harga Mobil", "Ketersedian"};
+        String [] JudulKolom={"Id","Tipe Mobil", "Merk Mobil", "Harga Mobil", "Stok"};
         tabModel = new DefaultTableModel(null, JudulKolom){
                   boolean[] canEdit = new boolean [] { false, false, false, false};
                   @Override
@@ -58,17 +59,16 @@ public class FormDataMobil extends javax.swing.JFrame {
              //Kelas Resultset Berfungsi Menyimpan Dataset(Sekumpulan Data) hasil prepareStatement Query
             ResultSet rs=st.executeQuery();   // import java.sql.ResultSet;
             // Menampilkan ke JTable  melalui tabModel
-            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, stok;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
                 harga_jual=rs.getString("harga_jual");
-                ketersediaan = rs.getString("status_sewa");
-                status_sewa = rs.getString("status_sewa");
+                stok = rs.getString("stok");
 
-                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_jual, status_sewa};
+                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_jual, stok};
                 tabModel.addRow(Data);
             }
         }
@@ -90,7 +90,7 @@ public class FormDataMobil extends javax.swing.JFrame {
                 st.setString(2, txtTipeMobil.getText());
                 st.setString(3, txtMerkMobil.getText());
                 st.setString(4, txtHargaSewa.getText());
-                st.setString(5, "Tersedia");
+                st.setInt(5, Integer.parseInt(txtStok.getText()));
             int rs=st.executeUpdate();
 
             if(rs>0){
@@ -100,6 +100,7 @@ public class FormDataMobil extends javax.swing.JFrame {
                 txtMerkMobil.setText("");
                 txtHargaSewa.setText("");
                 txtIdMobil.setText("");
+                txtStok.setText("");
             }
         }
         catch (SQLException sqle) {
@@ -118,11 +119,13 @@ public class FormDataMobil extends javax.swing.JFrame {
         String TipeMobil = tabModel.getValueAt(row, 1).toString();
         String MerkMobil = tabModel.getValueAt(row, 2).toString();
         String HargaSewa = tabModel.getValueAt(row, 3).toString();
+        String Stok = tabModel.getValueAt(row, 3).toString();
 
         txtIdMobil.setText(IdMobil);
         txtTipeMobil.setText(TipeMobil);
         txtMerkMobil.setText(MerkMobil);
         txtHargaSewa.setText(HargaSewa);
+        txtStok.setText(Stok);
       }
     
     // Method Untuk Menghapus Semua Isi JTable
@@ -143,20 +146,16 @@ public class FormDataMobil extends javax.swing.JFrame {
              //Kelas Resultset Berfungsi Menyimpan Dataset(Sekumpulan Data) hasil prepareStatement Query
             ResultSet rs=st.executeQuery();   // import java.sql.ResultSet;
             // Menampilkan ke JTable  melalui tabModel
-            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, stok;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
                 harga_jual=rs.getString("harga_jual");
-                ketersediaan = rs.getString("status_sewa");
-                status_sewa = "Tersedia";
-                if (ketersediaan == "1") {
-                   status_sewa = "Tidak Tersedia";
-                }
+                stok = rs.getString("stok");
 
-                Object Data[]={id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa};
+                Object Data[]={id_mobil, tipe_mobil, merk_mobil, harga_jual, stok};
                 tabModel.addRow(Data);
             }
       }
@@ -170,13 +169,14 @@ public class FormDataMobil extends javax.swing.JFrame {
         // Apabila tombol Yes ditekan
         if (ok == 0) {
           try {
-            String sql ="UPDATE data_mobil SET type_mobil = ?, merk_mobil= ?, harga_jual = ? WHERE id_mobil = ?";
+            String sql ="UPDATE data_mobil SET type_mobil = ?, merk_mobil= ?, harga_jual = ?, stok=? WHERE id_mobil = ?";
             PreparedStatement st = conn.prepareStatement(sql);
 
               st.setString(1, txtTipeMobil.getText());
               st.setString(2, txtMerkMobil.getText());
               st.setString(3, txtHargaSewa.getText());
               st.setString(4, txtIdMobil.getText());
+              st.setInt(5, Integer.parseInt(txtStok.getText()));
               int rs=st.executeUpdate();
 
               if(rs>0){
@@ -188,6 +188,8 @@ public class FormDataMobil extends javax.swing.JFrame {
               txtMerkMobil.setText("");
               txtHargaSewa.setText("");
               txtIdMobil.setText("");
+              txtStok.setText("");
+              
           }catch (SQLException se) {}  // Silahkan tambahkan Sendiri informasi Eksepsi
         }
 
@@ -213,6 +215,7 @@ public class FormDataMobil extends javax.swing.JFrame {
             txtMerkMobil.setText("");
             txtHargaSewa.setText("");
             txtIdMobil.setText("");
+            txtStok.setText("");
           } catch (Exception se) {  // Silahkan tambahkan catch Exception yang lain
              JOptionPane.showMessageDialog(this,"Gagal Hapus Data.. ");
            }
@@ -250,6 +253,8 @@ public class FormDataMobil extends javax.swing.JFrame {
         BCari = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         BTambahMobil = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        txtStok = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -353,44 +358,53 @@ public class FormDataMobil extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("Stok Mobil");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BCari))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(BTambahMobil)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(BSimpan)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGap(14, 14, 14)
                             .addComponent(BEdit)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(BHapus)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGap(18, 18, 18)
                             .addComponent(BCloseMobil))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(28, 28, 28)
-                            .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(BCari))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4))
-                            .addGap(21, 21, 21)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4))
+                                    .addGap(21, 21, 21))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(29, 29, 29)))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtTipeMobil)
                                 .addComponent(txtMerkMobil)
                                 .addComponent(txtHargaSewa)
-                                .addComponent(txtIdMobil, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtIdMobil, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                                .addComponent(txtStok))
+                            .addGap(129, 129, 129))))
                 .addContainerGap(230, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -412,22 +426,26 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtHargaSewa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BTambahMobil)
                     .addComponent(BSimpan)
-                    .addComponent(BCloseMobil)
                     .addComponent(BEdit)
                     .addComponent(BHapus)
-                    .addComponent(BTambahMobil))
+                    .addComponent(BCloseMobil))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BCari)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(185, 185, 185))
+                .addGap(165, 165, 165))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 153));
@@ -528,7 +546,7 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(MenuLogout)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -567,9 +585,9 @@ public class FormDataMobil extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -595,6 +613,7 @@ public class FormDataMobil extends javax.swing.JFrame {
         txtTipeMobil.setEnabled(true);
         txtMerkMobil.setEnabled(true);
         txtHargaSewa.setEnabled(true);
+        txtStok.setEnabled(true);
         BSimpan.setEnabled(true);
         BSimpan.setText("Simpan");
     }//GEN-LAST:event_BTambahMobilActionPerformed
@@ -639,20 +658,17 @@ public class FormDataMobil extends javax.swing.JFrame {
             ResultSet rs =st.executeQuery();
 
             hapusIsiJTable();
-            String id_mobil, tipe_mobil, merk_mobil, harga_jual, status_sewa, ketersediaan;
+            String id_mobil, tipe_mobil, merk_mobil, harga_jual, stok;
            
             while(rs.next()){
                 id_mobil=rs.getString("id_mobil");
                 tipe_mobil=rs.getString("type_mobil");
                 merk_mobil=rs.getString("merk_mobil");
                 harga_jual=rs.getString("harga_jual");
-                ketersediaan = rs.getString("status_sewa");
-                status_sewa = "Tersedia";
-                if (ketersediaan == "1") {
-                   status_sewa = "Tidak Tersedia";
-                }
+                stok = rs.getString("stok");
+               
 
-                Object Data[]={id_mobil,tipe_mobil,merk_mobil,harga_jual, status_sewa};
+                Object Data[]={id_mobil, tipe_mobil, merk_mobil, harga_jual, stok};
                 tabModel.addRow(Data);
             }
 
@@ -797,6 +813,7 @@ public class FormDataMobil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -807,6 +824,7 @@ public class FormDataMobil extends javax.swing.JFrame {
     private javax.swing.JTextField txtHargaSewa;
     private javax.swing.JTextField txtIdMobil;
     private javax.swing.JTextField txtMerkMobil;
+    private javax.swing.JTextField txtStok;
     private javax.swing.JTextField txtTipeMobil;
     // End of variables declaration//GEN-END:variables
 }
