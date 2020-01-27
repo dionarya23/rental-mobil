@@ -119,7 +119,7 @@ public class FormDataMobil extends javax.swing.JFrame {
         String TipeMobil = tabModel.getValueAt(row, 1).toString();
         String MerkMobil = tabModel.getValueAt(row, 2).toString();
         String HargaSewa = tabModel.getValueAt(row, 3).toString();
-        String Stok = tabModel.getValueAt(row, 3).toString();
+        String Stok = tabModel.getValueAt(row, 4).toString();
 
         txtIdMobil.setText(IdMobil);
         txtTipeMobil.setText(TipeMobil);
@@ -175,8 +175,8 @@ public class FormDataMobil extends javax.swing.JFrame {
               st.setString(1, txtTipeMobil.getText());
               st.setString(2, txtMerkMobil.getText());
               st.setString(3, txtHargaSewa.getText());
-              st.setString(4, txtIdMobil.getText());
-              st.setInt(5, Integer.parseInt(txtStok.getText()));
+              st.setInt(4, Integer.parseInt(txtStok.getText()));
+              st.setString(5, txtIdMobil.getText());
               int rs=st.executeUpdate();
 
               if(rs>0){
@@ -190,9 +190,15 @@ public class FormDataMobil extends javax.swing.JFrame {
               txtIdMobil.setText("");
               txtStok.setText("");
               
+              txtTipeMobil.setEnabled(false);
+              txtMerkMobil.setEnabled(false);
+              txtHargaSewa.setEnabled(false);
+              txtStok.setEnabled(false);
+              BSimpan.setText("Simpan");
+              BSimpan.setEnabled(false);
+              
           }catch (SQLException se) {}  // Silahkan tambahkan Sendiri informasi Eksepsi
         }
-
       }
     
     public void hapusData() {
@@ -599,6 +605,7 @@ public class FormDataMobil extends javax.swing.JFrame {
         txtTipeMobil.setEnabled(true);
         txtMerkMobil.setEnabled(true);
         txtHargaSewa.setEnabled(true);
+        txtStok.setEnabled(true);
 
         BSimpan.setText("Update"); // Merubah Teks Tombol Simpan
         BSimpan.setEnabled(true);
